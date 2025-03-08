@@ -30,5 +30,5 @@ CryptoSprint is a full stack web application built with the MERN stack (MongoDB,
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/Rohan18Das/CryptoSprint.git
-   cd CryptoSprint-MERN
+   cd CryptoSprint
 "# CryptoSprint" 
