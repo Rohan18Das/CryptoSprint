@@ -3,13 +3,14 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDe4E4FohKiT00LoOLzvkT7OalCPF3Qj_4",
-  authDomain: "cryptosprint-ff839.firebaseapp.com",
-  projectId: "cryptosprint-ff839",
-  storageBucket: "cryptosprint-ff839.firebasestorage.app",
-  messagingSenderId: "1016521743116",
-  appId: "1:1016521743116:web:82e067a3bc7899471d4729"
+  apiKey: "AIzaSyCXRXJSSgeTJgBrs_ioksGRggihPE7kIUg",
+  authDomain: "cryptosprint-a0d1d.firebaseapp.com",
+  projectId: "cryptosprint-a0d1d",
+  storageBucket: "cryptosprint-a0d1d.firebasestorage.app",
+  messagingSenderId: "1016743529935",
+  appId: "1:1016743529935:web:67c4d1b4e746b870bbd6ba"
 };
 
 // Initialize Firebase
