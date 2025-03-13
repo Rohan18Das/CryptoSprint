@@ -328,98 +328,12 @@ app.get('/api/transactions', async (req, res) => {
     }
 });
 
-// Handle webhook for Stripe payment status
-// app.post('/webhook', bodyParser.raw({ type: 'application/json' }), async (req, res) => {
-//     const sig = req.headers['stripe-signature'];
-//     let event;
-
-//     try {
-//         event = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
-
-//           const {email}=req.body;
-//           console.log(email)
-
-//         if (event.type === 'checkout.session.completed') {
-//             const session = event.data.object;
-//             const amountInINR = session.amount_total / 100;
-//             const email = session.customer_email;
-
-//             let wallet = await Wallet.findOne({ email });
-//             if (!wallet) wallet = new Wallet({ email, balance: 0 });
-
-//             wallet.balance += amountInINR;
-//             await wallet.save();
-
-//             const transaction = new Transaction({
-//                 email,
-//                 amount: amountInINR,
-//                 currency: 'INR',
-//                 transactionType: 'credit',
-//             });
-//             await transaction.save();
-
-
-
-// // Step 1: Create a transporter
-// const transporter = nodemailer.createTransport({
-//     service: 'gmail', // Use Gmail as the email service
-//     auth: {
-//       user: 'soumyaranjannayak0140@gmail.com', // Your email address
-//       pass: 'zubwpyofpwufopwg', // Your email password or app password
-//     },
-//   });
-
-//   const mailOptions = {
-//     from: 'soumyaranjanayak0140@gmail.com', // Sender email
-//     to:email, // Receiver email
-//     subject: 'Demo: Payment Successful - Wallet Top-up', // Subject of the email
-//     text: 'Dear user, your payment of ₹100 was successful. Your wallet balance has been updated.', // Email content
-//     html: `
-//       <div style="font-family: Arial, sans-serif; color: #333;">
-//         <div style="max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; background-color: #f7f7f7;">
-//           <h2 style="color: #4CAF50;">Payment Successful - Wallet Top-up</h2>
-//           <p>Dear user,</p>
-//           <p>Your payment of <strong>₹100</strong> was successful. Your wallet balance has been updated.</p>
-//           <p>Thank you for using our services.</p>
-//           <p style="margin-top: 40px;">Best regards,<br>The App Team</p>
-//         </div>
-//       </div>
-//     `,
-//   };
-
-//       // Log before sending email
-//       console.log('Sending email to:', email);
-
-//   // Step 3: Send the email
-//   transporter.sendMail(mailOptions, (error, info) => {
-//     if (error) {
-//       console.error('Error occurred..........!', error);
-//     } else {
-//       console.log('Email sent successfully:', info.response);
-//     }
-//   });
 
 
 
 
 
 
-
-
-
-
-
-//             console.log('Checkout Session Completed:', session.id);
-//             res.json({ received: true });
-//         } else {
-//             console.log(`Unhandled event type: ${event.type}`);
-//             res.json({ received: true });
-//         }
-//     } catch (error) {
-//         console.error('Webhook error:', error.message);
-//         res.status(400).send(`Webhook error: ${error.message}`);
-//     }
-//     });
 
 
 app.post('/webhook', bodyParser.raw({ type: 'application/json' }), async (req, res) => {
@@ -463,13 +377,13 @@ app.post('/webhook', bodyParser.raw({ type: 'application/json' }), async (req, r
             const transporter = nodemailer.createTransport({
                 service: 'gmail',
                 auth: {
-                    user: 'soumyaranjannayak0140@gmail.com',
-                    pass: 'zubwpyofpwufopwg',
+                     user: 'rohandas1807@gmail.com', // Your email
+                      pass: 'ynkjpaakuvkcakdc' // Use your actual App Password securely
                 },
             });
 
             const mailOptions = {
-                from: 'soumyaranjannayak0140@gmail.com',
+                  from: 'rohandas1807@gmail.com',
                 to: email,
                 subject: 'Payment Successful - Wallet Top-up',
                 html: `
